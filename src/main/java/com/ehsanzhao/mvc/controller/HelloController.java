@@ -17,9 +17,4 @@ public class HelloController {
         return "index";
     }
 
-    @GetMapping("/target")
-    public String toTarget(){
-        return "target";
-    }
-
 }
