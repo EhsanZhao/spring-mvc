@@ -17,4 +17,9 @@ public class HelloController {
         return "index";
     }
 
+    @GetMapping("/param")
+    public String param(){
+        return "param";
+    }
+
 }
