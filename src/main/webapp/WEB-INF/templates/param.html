@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th:="http://www.thymeleaf.org">
+<html lang="en" xmlns:th:="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="UTF-8">
   <title>参数</title>
@@ -7,5 +7,24 @@
 <body>
 <h1>参数</h1>
 <a th:href="@{/paramServletApi(username='zhao',password=1234)}">paramServletApi</a>
+<br>
+<a th:href="@{/paramFormal(username='zhao',password=1234)}">paramFormal</a>
+<br>
+<form th:action="@{/paramParameterValues}" method="post">
+  <input name="username" value="admin" />
+  <input name="password" value="123456" />
+  <input type="checkbox" name="role" value="a" >a</input>
+  <input type="checkbox" name="role" value="b" >b</input>
+  <input type="checkbox" name="role" value="c" >c</input>
+  <input type="submit">
+</form><br>
+<form th:action="@{/paramRequestParam}" method="post">
+  <input name="user_name" value="admin" />
+  <input name="password" value="123456" />
+  <input type="checkbox" name="role" value="a" >a</input>
+  <input type="checkbox" name="role" value="b" >b</input>
+  <input type="checkbox" name="role" value="c" >c</input>
+  <input type="submit">
+</form><br>
 </body>
 </html>
