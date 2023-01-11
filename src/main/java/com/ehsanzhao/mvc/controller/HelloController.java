@@ -27,5 +27,10 @@ public class HelloController {
         return "scope";
     }
 
+    @GetMapping("/view")
+    public String view(){
+        return "view";
+    }
+
 
 }
