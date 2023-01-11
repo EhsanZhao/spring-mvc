@@ -22,4 +22,10 @@ public class HelloController {
         return "param";
     }
 
+    @GetMapping("/scope")
+    public String scope(){
+        return "scope";
+    }
+
+
 }
