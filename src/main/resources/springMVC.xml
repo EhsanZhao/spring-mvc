@@ -27,8 +27,11 @@
             </bean>
         </property>
     </bean>
-
+    <!--配置视图控制器-->
     <mvc:view-controller path="/testViewController" view-name="success"></mvc:view-controller>
+
+    <!--开放对静态资源的访问，springmvc找不到，就去默认的servlet中去找-->
+    <mvc:default-servlet-handler></mvc:default-servlet-handler>
 
     <!--开启mvc的注解驱动，如果使用了view-controller标签不配置这个注解驱动的话，所有的@RequestMapping映射关系都会失效-->
     <mvc:annotation-driven></mvc:annotation-driven>
