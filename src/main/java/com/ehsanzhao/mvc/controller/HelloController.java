@@ -32,5 +32,9 @@ public class HelloController {
         return "view";
     }
 
+    @GetMapping("/restful")
+    public String restful(){
+        return "restful";
+    }
 
 }
