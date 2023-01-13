@@ -37,4 +37,14 @@ public class HelloController {
         return "restful";
     }
 
+    @GetMapping("/http")
+    public String http(){
+        return "http";
+    }
+
+    @GetMapping("/file")
+    public String file(){
+        return "file";
+    }
+
 }

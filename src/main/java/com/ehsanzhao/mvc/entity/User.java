@@ -2,6 +2,7 @@ package com.ehsanzhao.mvc.entity;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
 /**
