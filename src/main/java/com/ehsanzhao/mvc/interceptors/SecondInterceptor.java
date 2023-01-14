@@ -1,4 +1,4 @@
-package com.ehsanzhao.mvc.Interceptors;
+package com.ehsanzhao.mvc.interceptors;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -18,7 +18,7 @@ public class SecondInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         System.out.println("SecondInterceptor ----> preHandle");
         // true || false 表示放不放行
-        return false;
+        return true;
     }
 
     @Override

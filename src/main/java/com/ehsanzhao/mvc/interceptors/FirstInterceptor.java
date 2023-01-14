@@ -1,4 +1,4 @@
-package com.ehsanzhao.mvc.Interceptors;
+package com.ehsanzhao.mvc.interceptors;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;

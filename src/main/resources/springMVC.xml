@@ -29,6 +29,7 @@
     </bean>
     <!--配置视图控制器-->
     <mvc:view-controller path="/testViewController" view-name="success"></mvc:view-controller>
+    <mvc:view-controller path="/error" view-name="exceptionResolver"></mvc:view-controller>
 
     <!--开放对静态资源的访问，springmvc找不到，就去默认的servlet中去找-->
     <mvc:default-servlet-handler></mvc:default-servlet-handler>
@@ -44,14 +45,27 @@
         <ref bean="firstInterceptor"></ref>
         <ref bean="secondInterceptor"></ref>
         <!--以下两种方式默认对所有请求拦截-->
-<!--        <bean class="com.ehsanzhao.mvc.Interceptors.FirstInterceptor"></bean>-->
+<!--        <bean class="com.ehsanzhao.mvc.interceptors.FirstInterceptor"></bean>-->
 <!--        <ref bean="firstInterceptor"></ref>-->
         <!--以下方式可以配置拦截请求路径-->
 <!--        <mvc:interceptor>-->
-<!--&lt;!&ndash;            <mvc:mapping path="/**"/>&ndash;&gt; &lt;!&ndash;此处必须/**，/*只会匹配一层&ndash;&gt;-->
-<!--&lt;!&ndash;            <mvc:exclude-mapping path="/testInterceptor"/>&ndash;&gt;-->
+<!--            <mvc:mapping path="/**"/> 此处必须/**，/*只会匹配一层-->
+<!--            <mvc:exclude-mapping path="/testInterceptor"/>-->
 <!--            <mvc:mapping path="/testInterceptor"/>-->
 <!--            <ref bean="firstInterceptor"></ref>-->
 <!--        </mvc:interceptor>-->
     </mvc:interceptors>
+
+    <!--配置异常处理器-->
+<!--    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">-->
+<!--        <property name="exceptionMappings">-->
+<!--            <props>-->
+<!--                &lt;!&ndash;配置制定错误跳转到制定view&ndash;&gt;-->
+<!--                <prop key="java.lang.Exception">error</prop>-->
+<!--            </props>-->
+<!--        </property>-->
+<!--        &lt;!&ndash;配置异常信息值&ndash;&gt;-->
+<!--        <property name="exceptionAttribute" value="error"></property>-->
+<!--    </bean>-->
+
 </beans>

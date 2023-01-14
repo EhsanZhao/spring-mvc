@@ -1,4 +1,4 @@
-package com.ehsanzhao.mvc.controller.interceter;
+package com.ehsanzhao.mvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @date 2023/1/14
  */
 @Controller
-public class InterceterController {
+public class IntercetorController {
 
     @RequestMapping("/testInterceptor")
-    public String Interceptor(){
+    public String interceptor(){
         return "success";
     }
 

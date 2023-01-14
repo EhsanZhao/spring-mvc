@@ -47,9 +47,9 @@ public class HelloController {
         return "file";
     }
 
-    @GetMapping("/Interceptor")
-    public String Interceptor(){
-        return "Interceptor";
+    @GetMapping("/interceptor")
+    public String interceptor(){
+        return "interceptor";
     }
 
 }
