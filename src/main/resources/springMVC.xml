@@ -6,7 +6,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!--扫描组件-->
-    <context:component-scan base-package="com.ehsanzhao.mvc.controller"></context:component-scan>
+    <context:component-scan base-package="com.ehsanzhao.mvc"></context:component-scan>
 
     <!--配置Thymeleaf视图解析器-->
     <bean id="viewResolver" class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
@@ -39,4 +39,19 @@
     <!--配置文件上传解析器，将上传的文件封装为MultipartFile-->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"></bean>
 
+    <!--配置拦截器Interceptor-->
+    <mvc:interceptors>
+        <ref bean="firstInterceptor"></ref>
+        <ref bean="secondInterceptor"></ref>
+        <!--以下两种方式默认对所有请求拦截-->
+<!--        <bean class="com.ehsanzhao.mvc.Interceptors.FirstInterceptor"></bean>-->
+<!--        <ref bean="firstInterceptor"></ref>-->
+        <!--以下方式可以配置拦截请求路径-->
+<!--        <mvc:interceptor>-->
+<!--&lt;!&ndash;            <mvc:mapping path="/**"/>&ndash;&gt; &lt;!&ndash;此处必须/**，/*只会匹配一层&ndash;&gt;-->
+<!--&lt;!&ndash;            <mvc:exclude-mapping path="/testInterceptor"/>&ndash;&gt;-->
+<!--            <mvc:mapping path="/testInterceptor"/>-->
+<!--            <ref bean="firstInterceptor"></ref>-->
+<!--        </mvc:interceptor>-->
+    </mvc:interceptors>
 </beans>
